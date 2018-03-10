@@ -15,17 +15,17 @@ print('Socket created')
 try:
 	s.bind((HOST, PORT))
 except socket.error:
-	print 'Bind failed '
+	print('Bind failed ')
 
 	s.listen(5)
-	print 'Socket awaiting messages'
+	print('Socket awaiting messages')
 	(conn, addr) = s.accept()
-	print 'Connected'
+	print('Connected')
 
 # awaiting for message
 while True:
 	data = conn.recv(1024)
-	print 'I sent a message back in response to: ' + data
+	print('I sent a message back in response to: ' + data)
 	reply = ''
 
 	# process your message
