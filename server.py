@@ -24,7 +24,7 @@ except socket.error:
 
 	s.listen(5)
 	print('Socket awaiting messages')
-	(conn, addr) = s.accept()
+	conn, addr = s.accept()
 	print('Connected')
 
 # awaiting for message
