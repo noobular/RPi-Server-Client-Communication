@@ -9,7 +9,7 @@ B = LED(27) #GPIOZero's version of GPIO.setup
 HOST = '192.168.1.16' # Server IP or Hostname
 PORT = 21012 #Pick an open Port (1000+ recommended), must match the client sport
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-print 'Socket created'
+print('Socket created')
 
 #managing error exception
 try:
