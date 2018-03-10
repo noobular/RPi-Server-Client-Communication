@@ -1,8 +1,10 @@
 import socket               
 
-s = socket.socket()        
-host = '10.91.25.74'# ip of raspberry pi 
-port = 22             
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+host = s.gethostname()
+port = 22
+s.bind((host, port))
+     
 s.connect((host, port))
 print(s.recv(1024))
 s.close()
