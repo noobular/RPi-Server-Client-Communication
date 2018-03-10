@@ -22,10 +22,11 @@ try:
 except socket.error:
 	print('Bind failed ')
 
-	s.listen(5)
-	print('Socket awaiting messages')
-	conn, addr = s.accept()
-	print('Connected')
+s.listen(5)
+print('Socket awaiting messages')
+	
+conn, addr = s.accept()
+print('Connected')
 
 # awaiting for message
 while True:
