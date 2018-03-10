@@ -1,6 +1,4 @@
 import config
-import socket
-
 #Setting up pins
 R = LED(3) #GPIOZero's version of GPIO.setup
 G = LED(4) #GPIOZero's version of GPIO.setup
