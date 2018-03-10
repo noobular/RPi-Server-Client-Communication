@@ -1,10 +1,16 @@
-import socket               
+import socket
+import config
 
+HOST = '192.168.1.16' # Enter IP or Hostname of your server
+PORT = 12345 # Pick an open Port (1000+ recommended), must match the server port
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-host = s.gethostname()
-port = 22
-s.bind((host, port))
-     
-s.connect((host, port))
-print(s.recv(1024))
-s.close()
+s.connect((HOST,PORT))
+
+#Lets loop awaiting for your input
+while True:
+	command = raw_input('Enter your command: ')
+	s.send(command)
+	reply = s.recv(1024)
+		if reply == 'Terminate':
+			break
+		print reply
