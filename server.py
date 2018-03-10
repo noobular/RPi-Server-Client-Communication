@@ -5,7 +5,7 @@ try:
 	R = LED(3) #GPIOZero's version of GPIO.setup
 	G = LED(4) #GPIOZero's version of GPIO.setup
 	B = LED(27) #GPIOZero's version of GPIO.setup
-else:
+else
 	print("Failed to create LED information...")
 HOST = '192.168.1.16' # Server IP or Hostname
 PORT = 21012 #Pick an open Port (1000+ recommended), must match the client sport
