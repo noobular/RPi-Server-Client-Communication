@@ -1,11 +1,11 @@
 import config
-
+import socket
 try:
 	#Setting up pins
 	R = LED(3) #GPIOZero's version of GPIO.setup
 	G = LED(4) #GPIOZero's version of GPIO.setup
 	B = LED(27) #GPIOZero's version of GPIO.setup
-	
+
 except Exception:
 	print("Failed to create LED information...")
 
