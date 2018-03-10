@@ -2,7 +2,7 @@ import socket
 
 s = socket.socket()        
 host = '10.91.25.74'# ip of raspberry pi 
-port = "22"             
+port = 22             
 s.connect((host, port))
 print(s.recv(1024))
 s.close()

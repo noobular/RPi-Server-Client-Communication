@@ -7,7 +7,7 @@ B = LED(27) #GPIOZero's version of GPIO.setup
 
 s = socket.socket()
 host = '10.91.27.24' #ip of raspberry pi
-port = "22"
+port = 22
 s.bind((host, port))
 
 s.listen(5)
