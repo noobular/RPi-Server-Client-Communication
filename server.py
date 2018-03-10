@@ -14,7 +14,7 @@ print('Socket created')
 #managing error exception
 try:
 	s.bind((HOST, PORT))
-	except socket.error:
+except socket.error:
 	print 'Bind failed '
 
 	s.listen(5)
@@ -31,9 +31,8 @@ while True:
 	# process your message
 	if data == 'Hello':
 		reply = 'Hi, back!'
-		elif data == 'This is important':
+	elif data == 'This is important':
 		reply = 'OK, I have done the important thing you have asked me!'
-
 	#and so on and on until...
 	elif data == 'quit':
 		conn.send('Terminating')
