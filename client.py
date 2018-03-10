@@ -13,4 +13,4 @@ while True:
 	reply = s.recv(1024)
 	if reply == lower('terminate'):
 		break
-	print reply
+	print(reply)
