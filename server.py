@@ -1,5 +1,6 @@
 import config
 import socket
+config.init()
 try:
 	#Setting up pins
 	R = LED(3) #GPIOZero's version of GPIO.setup
