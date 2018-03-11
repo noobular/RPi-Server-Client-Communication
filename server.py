@@ -25,7 +25,6 @@ try:
 	s.bind((HOST, PORT))
 except socket.error:
 	print('Bind failed ')
-	break
 
 s.listen(5)
 print('Socket awaiting messages...')
