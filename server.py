@@ -30,6 +30,7 @@ print('Connected')
 # awaiting for message
 while True:
 	data = conn.recv(1024)
+	data = data.decode()
 	print('I sent a message back in response to: ' + str(data))
 	reply = ''
 	# process your message
@@ -45,5 +46,5 @@ while True:
 		reply = 'Unknown command'
 
 	# Sending reply
-	conn.send(str.encode(reply))
+	conn.send(reply.encode())
 	conn.close() # Close connections
