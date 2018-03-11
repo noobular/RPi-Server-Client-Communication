@@ -43,10 +43,10 @@ while True:
 	reply = func.messageCheck(data)
 	# Sending reply
 	try:
-		conn.send(reply.encode())
+		conn.send("$$ "+reply.encode())
 	except Exception:
 		print("Problem encoding the message...")
 	
 print("Shutting Down Server...")
-conn.send("Server Shutdown.".encode())
+conn.send("$$ Server Shutdown.".encode())
 conn.close() # Close connections
