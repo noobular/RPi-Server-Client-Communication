@@ -23,10 +23,10 @@ except socket.error:
 	print('Bind failed ')
 
 s.listen(5)
-print('Socket awaiting messages')
+print('Socket awaiting messages...')
 	
 conn, addr = s.accept()
-print('Connected')
+print('Client has connected...')
 
 # awaiting for message
 while True:
@@ -39,6 +39,7 @@ while True:
 	print('## MESSAGE RECIEVED: ' + data)
 	reply = ''
 	
+	## When the message is recieved, input it into the messageCheck function
 	if(func.messageCheck(data) == False):
 		print("Message Check Returned False")
 		break
