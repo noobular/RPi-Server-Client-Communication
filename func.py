@@ -8,6 +8,8 @@ import config
 '''
 ## This is a list of all the commands you've got listed.
 possibleCommands = "upload, download, help, commands."
+
+## Message Check function; Checks the messages that are recieved by the server.
 def messageCheck(check):
     reply = ''
     if check == 'quit':
@@ -29,9 +31,6 @@ def messageCheck(check):
     else:   
         reply = 'Unknown command'
     return reply
-
-
-
 
 ### ADD YOUR FUNCTIONS AFTER THIS LINE ###
 
