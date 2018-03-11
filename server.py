@@ -46,8 +46,8 @@ while True:
 	try:
 		conn.send(reply.encode())
 	except Exception:
-		print("Problem encoding the message...")
+		print("$$ Problem encoding the message...")
 	
-print("Shutting Down Server...")
+print("$$ Shutting Down Server...")
 conn.send("$$ Server Shutdown.".encode())
 conn.close() # Close connections

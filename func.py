@@ -17,16 +17,16 @@ def messageCheck(check):
         return False
     ##======INPUT CHECKS HERE=======##
     elif check == "upload":
-        print("Attempting to upload data...")
+        print("$$ Attempting to upload data...")
         svr_uploadfile()
         reply = 'Server Attempting to upload file ....'
     elif check == "download":
-        print("Attempting to send data to client")
+        print("$$ Attempting to send data to client")
         cli_downloadfile()
         reply = 'Server Attempting to send data...'
     ##^============================^##
     elif check == "help" or check == "commands":
-        print("Sending Help Information")
+        print("$$ Sending Help Information")
         reply = 'Possible commands:' + possibleCommands
     else:   
         reply = 'Unknown command'
@@ -35,7 +35,7 @@ def messageCheck(check):
 ### ADD YOUR FUNCTIONS AFTER THIS LINE ###
 
 def svr_uploadfile():
-    print("Test upload function")
+    print("$$ Test upload function ran.")
 
 def cli_downloadfile():
-    print("Test download function")
+    print("$$ Test download function ran.")
