@@ -6,7 +6,7 @@ s.connect((HOST,PORT))
 
 #Lets loop awaiting for your input
 while True:
-	message = input('Enter your message: ')
+	message = input('>#> ')
 	s.send(message.encode())
 	reply = s.recv(1024)
 	if reply == 'terminate':
