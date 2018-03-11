@@ -41,7 +41,6 @@ while True:
 	except Exception:
 		print("There was a problem recieving the message...")
 	print('## MESSAGE RECIEVED: ' + data)
-	reply = ''
 	reply = func.messageCheck(data)
 	# Sending reply
 	try:
