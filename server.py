@@ -1,5 +1,6 @@
 import config
 import socket
+global HOST, NAME
 try:
 	#Setting up pins
 	R = LED(3) #GPIOZero's version of GPIO.setup
@@ -14,6 +15,7 @@ print('Socket created')
 
 #managing error exception
 try:
+	global HOST, NAME
 	s.bind((HOST, PORT))
 except socket.error:
 	print('Bind failed ')
