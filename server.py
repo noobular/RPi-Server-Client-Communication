@@ -41,7 +41,7 @@ while True:
 		print("There was a problem recieving the message...")
 
 	print('## MESSAGE RECIEVED: ' + data)
-	reply = "$$" + func.messageCheck(data)
+	reply = "$$ " + func.messageCheck(data)
 	# Sending reply
 	try:
 		conn.send(reply.encode())
