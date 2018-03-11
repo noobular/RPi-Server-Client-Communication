@@ -1,5 +1,6 @@
 import config
 global reply
+reply = ''
 
 def messageCheck(check):
     global reply
