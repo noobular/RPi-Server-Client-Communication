@@ -24,7 +24,7 @@ try:
 	global HOST, NAME
 	s.bind((HOST, PORT))
 except socket.error:
-	print('$$ Bind failed ')
+	print('$$ Bind failed, RUN THE FILE AGAIN UNTIL WORKING...')
 
 s.listen(5)
 print('$$ Socket awaiting messages...')
