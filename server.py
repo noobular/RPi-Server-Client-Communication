@@ -6,7 +6,7 @@ import func
 
 import socket
 #####################################
-print("If the sockets bind fails, attempt to restart the server.")
+print("$$ If the sockets bind fails, attempt to restart the server.")
 try:
 	#Setting up pins
 	R = LED(3) #GPIOZero's version of GPIO.setup
@@ -14,23 +14,23 @@ try:
 	B = LED(27) #GPIOZero's version of GPIO.setup
 
 except Exception:
-	print("Failed to create LED information...")
+	print("$$ Failed to create LED information...")
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-print('Socket created')
+print('$$ Socket created')
 
 #managing error exception
 try:
 	global HOST, NAME
 	s.bind((HOST, PORT))
 except socket.error:
-	print('Bind failed ')
+	print('$$ Bind failed ')
 
 s.listen(5)
-print('Socket awaiting messages...')
+print('$$ Socket awaiting messages...')
 	
 conn, addr = s.accept()
-print('Client has connected...')
+print('$$ Client has connected...')
 
 # awaiting for message
 while True:
@@ -38,7 +38,7 @@ while True:
 		data = conn.recv(1024)
 		data = str(data.decode())
 	except Exception:
-		print("There was a problem recieving the message...")
+		print("$$ There was a problem recieving the message...")
 
 	print('## MESSAGE RECIEVED: ' + data)
 	reply = "$$ " + func.messageCheck(data)
