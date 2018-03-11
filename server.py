@@ -54,5 +54,6 @@ while True:
 		conn.send(reply.encode())
 	except Exception:
 		print("Problem encoding the message...")
-		conn.send("There was a problem trying to read the message...".encode())
-	conn.close() # Close connections
+	
+print("Shutting Down Server...")
+conn.close() # Close connections
