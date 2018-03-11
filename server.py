@@ -29,8 +29,12 @@ print('Connected')
 
 # awaiting for message
 while True:
-	data = conn.recv(1024)
-	data = data.decode()
+	try:
+		data = conn.recv(1024)
+		data = data.decode()
+	except Exception:
+		print("There was a problem recieving the message...")
+		
 	print('I sent a message back in response to: ' + str(data))
 	reply = ''
 	# process your message
@@ -40,7 +44,7 @@ while True:
 		reply = 'OK, I have done the important thing you have asked me!'
 	#and so on and on until...
 	elif data == 'quit':
-		conn.send('Terminating')
+		conn.send('Terminating'.encode())
 		break
 	else:
 		reply = 'Unknown command'
