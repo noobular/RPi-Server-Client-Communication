@@ -1,16 +1,16 @@
 import config
 global reply
 
-def messageCheck(data):
+def messageCheck(check):
     global reply
     reply = ''
-    if data == 'quit':
+    if check == 'quit':
         conn.send('Terminating'.encode())
         return False
-    elif data == "1":
+    elif check == "1":
         print("Test check 1")
         reply = 'Test Check 1'
-    elif data == "2":
+    elif check == "2":
         print("Test check 2")
         reply = 'Test Check 2'
     else:   
