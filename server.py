@@ -32,7 +32,7 @@ print('Connected')
 while True:
 	try:
 		data = conn.recv(1024)
-		data = data.decode()
+		data = str(data.decode())
 	except Exception:
 		print("There was a problem recieving the message...")
 
@@ -40,6 +40,7 @@ while True:
 	reply = ''
 	
 	if(func.messageCheck(data) == False):
+		print("Message Check Returned False")
 		break
 
 	# Sending reply
