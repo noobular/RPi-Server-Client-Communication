@@ -40,12 +40,9 @@ while True:
 		data = str(data.decode())
 	except Exception:
 		print("There was a problem recieving the message...")
-
 	print('## MESSAGE RECIEVED: ' + data)
 	reply = ''
-	
 	func.messageCheck(data)
-
 	# Sending reply
 	try:
 		conn.send(reply.encode())

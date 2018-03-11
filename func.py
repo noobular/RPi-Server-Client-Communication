@@ -1,3 +1,4 @@
+import config
 global reply
 def messageCheck(data):
     global reply
