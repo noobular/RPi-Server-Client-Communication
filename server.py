@@ -39,7 +39,8 @@ while True:
 	print('## MESSAGE RECIEVED: ' + data)
 	reply = ''
 	
-	func.messageCheck(data)
+	if(func.messageCheck(data) == False):
+		break
 
 	# Sending reply
 	try:
