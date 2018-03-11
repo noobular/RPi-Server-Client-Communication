@@ -1,4 +1,5 @@
 import config
+import func
 from config import HOST,PORT
 import socket
 
@@ -35,19 +36,10 @@ while True:
 	except Exception:
 		print("There was a problem recieving the message...")
 
-	print('## MESSAGE RECIEVED: ' + str(data))
+	print('## MESSAGE RECIEVED: ' + data)
 	reply = ''
-	# process your message
-	if data == 'Hello':
-		reply = 'Hi, back!'
-	elif data == 'This is important':
-		reply = 'OK, I have done the important thing you have asked me!'
-	#and so on and on until...
-	elif data == 'quit':
-		conn.send('Terminating'.encode())
-		break
-	else:
-		reply = 'Unknown command'
+	
+	func.messageCheck(data)
 
 	# Sending reply
 	try:
@@ -56,4 +48,5 @@ while True:
 		print("Problem encoding the message...")
 	
 print("Shutting Down Server...")
+conn.send("Server Shutdown.".encode())
 conn.close() # Close connections
