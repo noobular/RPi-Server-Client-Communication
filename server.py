@@ -1,6 +1,7 @@
 import config
+from config import HOST,PORT
 import socket
-config.init()
+
 try:
 	#Setting up pins
 	R = LED(3) #GPIOZero's version of GPIO.setup
@@ -31,7 +32,6 @@ while True:
 	data = conn.recv(1024)
 	print('I sent a message back in response to: ' + str(data))
 	reply = ''
-
 	# process your message
 	if data == 'Hello':
 		reply = 'Hi, back!'
@@ -45,5 +45,5 @@ while True:
 		reply = 'Unknown command'
 
 	# Sending reply
-	conn.send(reply)
+	conn.send(str.encode(reply))
 	conn.close() # Close connections
