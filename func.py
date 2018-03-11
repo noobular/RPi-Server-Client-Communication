@@ -1,6 +1,9 @@
 global reply
+
+
 def messageCheck(data):
 	global reply
+	reply = ''
 	if data == 'quit':
 		conn.send('Terminating'.encode())
 		return False
