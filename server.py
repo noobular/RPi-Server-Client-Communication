@@ -1,7 +1,12 @@
+# IMPORTING 
 import config
-import func
 from config import HOST,PORT
+
+import func
+from func import reply
+
 import socket
+#####################################
 
 try:
 	#Setting up pins
@@ -39,7 +44,21 @@ while True:
 	print('## MESSAGE RECIEVED: ' + data)
 	reply = ''
 	
-	## When the message is recieved, input it into the messageCheck function
+	func.messageCheck(data)
+
+	# Sending reply
+	try:
+		conn.send(reply.encode())
+	except Exception:
+		print("Problem encoding the message...")
+	
+print("Shutting Down Server...")
+conn.send("Server Shutdown.".encode())
+conn.close() # Close connections
+
+
+
+## When the message is recieved, input it into the messageCheck function
 	if data == 'quit':
 		conn.send('Terminating'.encode())
 		break
@@ -53,14 +72,3 @@ while True:
 	#########################################
 	else:
 		reply = 'Unknown command'
-
-
-	# Sending reply
-	try:
-		conn.send(reply.encode())
-	except Exception:
-		print("Problem encoding the message...")
-	
-print("Shutting Down Server...")
-conn.send("Server Shutdown.".encode())
-conn.close() # Close connections
