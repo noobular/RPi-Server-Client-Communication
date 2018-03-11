@@ -6,7 +6,6 @@ import func
 
 import socket
 #####################################
-print("$$ If the sockets bind fails, attempt to restart the server.")
 try:
 	#Setting up pins
 	R = LED(3) #GPIOZero's version of GPIO.setup
@@ -39,7 +38,7 @@ while True:
 		data = str(data.decode())
 	except Exception:
 		print("$$ There was a problem recieving the message...")
-
+	print(' ')
 	print('## MESSAGE RECIEVED: ' + data)
 	reply = "$$ " + func.messageCheck(data)
 	# Sending reply
