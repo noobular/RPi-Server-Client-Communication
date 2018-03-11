@@ -1,4 +1,4 @@
-global reply	
+global reply
 def messageCheck(data):
 	global reply
 	reply = ''
