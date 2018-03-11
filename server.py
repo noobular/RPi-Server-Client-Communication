@@ -40,7 +40,7 @@ while True:
 	reply = ''
 	
 	## When the message is recieved, input it into the messageCheck function
-		print(func.messageCheck(data))
+	func.messageCheck(data)
 
 
 	# Sending reply
