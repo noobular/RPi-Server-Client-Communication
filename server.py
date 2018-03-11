@@ -3,7 +3,6 @@ import config
 from config import HOST,PORT
 
 import func
-from func import reply
 
 import socket
 #####################################
