@@ -1,6 +1,5 @@
 import config
 import socket
-global HOST, NAME
 try:
 	#Setting up pins
 	R = LED(3) #GPIOZero's version of GPIO.setup
