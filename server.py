@@ -34,8 +34,8 @@ while True:
 		data = data.decode()
 	except Exception:
 		print("There was a problem recieving the message...")
-		
-	print('I sent a message back in response to: ' + str(data))
+
+	print('## MESSAGE RECIEVED: ' + str(data))
 	reply = ''
 	# process your message
 	if data == 'Hello':
@@ -50,5 +50,9 @@ while True:
 		reply = 'Unknown command'
 
 	# Sending reply
-	conn.send(reply.encode())
+	try:
+		conn.send(reply.encode())
+	except Exception:
+		print("Problem encoding the message...")
+		conn.send("There was a problem trying to read the message...".encode())
 	conn.close() # Close connections
