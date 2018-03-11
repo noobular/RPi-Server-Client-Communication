@@ -3,7 +3,7 @@ print("Config Imported...")
 import socket
 from gpiozero import LED
 
-def initialize:
+def initialize():
 	global HOST, PORT
 	## Server IP / Hostname
 	HOST = '192.168.1.16' 
