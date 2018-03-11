@@ -6,7 +6,7 @@ import func
 
 import socket
 #####################################
-
+print("If the sockets bind fails, attempt to restart the server.")
 try:
 	#Setting up pins
 	R = LED(3) #GPIOZero's version of GPIO.setup
