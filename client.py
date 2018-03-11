@@ -9,6 +9,6 @@ while True:
 	message = input('Enter your message: ')
 	s.send(message.encode())
 	reply = s.recv(1024)
-	if reply == lower('terminate'):
+	if reply == 'terminate':
 		break
 	print(reply.decode())
