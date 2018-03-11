@@ -23,30 +23,30 @@ try:
 	global HOST, NAME
 	s.bind((HOST, PORT))
 except socket.error:
-	print('$$ Bind failed, RUN THE FILE AGAIN UNTIL WORKING...')
+	print('$$ Bind failed, Try running the script again...')
+else:
+	s.listen(5)
+	print('$$ Socket awaiting messages...')
+		
+	conn, addr = s.accept()
+	print('$$ Client has connected...')
 
-s.listen(5)
-print('$$ Socket awaiting messages...')
-	
-conn, addr = s.accept()
-print('$$ Client has connected...')
-
-# awaiting for message
-while True:
-	try:
-		data = conn.recv(1024)
-		data = str(data.decode())
-	except Exception:
-		print("$$ There was a problem recieving the message...")
-	print(' ')
-	print('## MESSAGE RECIEVED: ' + data)
-	reply = "$$ " + func.messageCheck(data)
-	# Sending reply
-	try:
-		conn.send(reply.encode())
-	except Exception:
-		print("$$ Problem encoding the message...")
-	
+	# awaiting for message
+	while True:
+		try:
+			data = conn.recv(1024)
+			data = str(data.decode())
+		except Exception:
+			print("$$ There was a problem recieving the message...")
+		print(' ')
+		print('## MESSAGE RECIEVED: ' + data)
+		reply = "$$ " + func.messageCheck(data)
+		# Sending reply
+		try:
+			conn.send(reply.encode())
+		except Exception:
+			print("$$ Problem encoding the message...")
+		
 print("$$ Shutting Down Server...")
 conn.send("$$ Server Shutdown.".encode())
 conn.close() # Close connections
