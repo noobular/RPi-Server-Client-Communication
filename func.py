@@ -15,7 +15,7 @@ def messageCheck(check):
     if check == 'quit':
         conn.send('Terminating'.encode())
         return False
-    ##======INPUT CHECKS HERE=======##
+    ##V=====INPUT CHECKS HERE======V##
     elif check == "upload":
         print("$$ Attempting to upload data...")
         svr_uploadfile()
