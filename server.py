@@ -40,9 +40,8 @@ while True:
 	reply = ''
 	
 	## When the message is recieved, input it into the messageCheck function
-	if(func.messageCheck(data) == False):
-		print("Message Check Returned False")
-		break
+		print(func.messageCheck(data))
+
 
 	# Sending reply
 	try:
