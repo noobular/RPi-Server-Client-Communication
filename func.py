@@ -35,30 +35,10 @@ def messageCheck(check):
     return reply
 
 ### ADD YOUR FUNCTIONS AFTER THIS LINE ###
-def createSSHClient(server, port, user, password):
-    client = paramiko.SSHClient()
-    client.load_system_host_keys()
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    client.connect(server, port, user, password)
-    return client
+
 
 def svr_uploadfile():
-    ssh = createSSHClient(server, port, user, password)
-    ssh = SSHClient()
-    ssh.load_system_host_keys()
-    ssh.connect('example.com') 'IP Address for Server
-
-    # SCPCLient takes a paramiko transport as an argument
-    scp = SCPClient(ssh.get_transport())
-
-    scp.put('test.txt', 'test2.txt')
-    scp.get('test2.txt')
-
-    # Uploading the 'test' directory with its content in the
-    # '/home/user/dump' remote directory
-    scp.put('test', recursive=True, remote_path='/home/user/dump')
-
-    scp.close()
+    scp pi@HOST:/home/pictures /sdcard/Documents
     print("$$ Test upload function ran.")
 
 def cli_downloadfile():
